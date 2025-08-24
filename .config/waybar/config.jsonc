@@ -1,0 +1,147 @@
+{
+    "height": 30,
+    "spacing": 8,
+    "margin": "16 16 0 16",
+    "start_hidden": true,
+    "modules-left": [
+        "cpu",
+	//"temperature",
+	"custom/gpu-util",
+	//"custom/gpu-temp",
+        "memory"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        //"tray",
+        "pulseaudio",
+        "battery",
+        "network",
+        "clock"
+    ],
+    "cpu": {
+	"tooltip": false,
+	"interval": 5,
+        "format": "CPU {usage}%",
+	"format-alt": "CPU {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
+        "format-icons": [
+            "<span color='#ebdbb2'>▁</span>", // white
+            "<span color='#98971a'>▂</span>", // green
+            "<span color='#d79921'>▃</span>", // yellow
+            "<span color='#d79921'>▄</span>", // yellow
+            "<span color='#d65d0e'>▅</span>", // orange
+            "<span color='#d65d0e'>▆</span>", // orange
+            "<span color='#cc241d'>▇</span>", // red
+            "<span color='#cc241d'>█</span>"  // red
+        ]
+    },
+//    "temperature": {
+//	"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+//	"format": "{temperatureC}°C",
+//	"tooltip": false
+//    },
+    "custom/gpu-util": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "GPU {}%",
+        "interval": 5,
+	"tooltip": false
+    },
+//    "custom/gpu-temp": {
+//        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+//        "format": "{}°C",
+//        "interval": 10,
+//	"tooltip": false
+//    },
+    "memory": {
+        "format": "RAM {percentage}%",
+	"tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": " {icon} ",
+	"on-click": "activate",
+	"persistent-workspaces": {
+	    "1": [],
+	    "2": [],
+	    "3": [],
+	    "4": [],
+	    "5": [],
+	    "6": [],
+	    "7": [],
+	    "8": []
+	},
+	"format-icons": {
+	    "1": "1",
+	    "2": "2",
+	    "3": "3",
+	    "4": "4",
+	    "5": "5",
+	    "6": "6",
+	    "7": "7",
+	    "8": "8"
+        }
+    },
+//    "tray": {
+//        "icon-size": 21,
+//        "spacing": 10,
+//        "icons": {
+//	    "discord": "/home/robert/.config/waybar/discord.png"
+//        }
+//    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "{icon}   {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+	"tooltip": false
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+	"tooltip": false
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+	"format-alt": "{ipaddr} ({signalStrength}%)",
+	"tooltip": false
+    },
+    "clock": {
+	"format": "{:%a %b %d, %I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+	"calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#d79921'><b>{}</b></span>",
+                              "days":       "<span color='#ebdbb2'><b>{}</b></span>",
+                              "weeks":      "<span color='#98971a'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#458588'><b>{}</b></span>",
+                              "today":      "<span color='#d65d0e'><b><u>{}</u></b></span>"
+                              }
+                    }
+    }
+}

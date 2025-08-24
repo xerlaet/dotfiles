@@ -1,0 +1,48 @@
+* {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* Main Window */
+window#waybar {
+    background-color: rgba(40,40,40,0);
+    border-bottom: 0px solid #458488;
+    border-radius: 0px;
+    color: #ebdbb2;
+}
+.modules-left {
+	padding-left: 0px;
+}
+.modules-right {
+	padding-right: 0px;
+}
+
+/* Workspaces */
+#tray, #workspaces, label.module {
+	background-color: rgba(40,40,40,1.0);
+	border-radius: 4px;
+	border: 1px solid #ebdbb2;
+}
+label.module {
+	padding: 0 10px;
+}
+#workspaces button {
+  padding: 0 5px;
+  color: #ebdbb2;
+  border-radius: 0px;
+  border-bottom: 0px solid transparent;
+}
+#workspaces button.empty {
+	color: #ebdbb2;
+}
+#workspaces button.visible {
+  background-color: #ebdbb2;
+  color: #404040;
+  /*border-bottom: 2px solid #458588;*/
+}
+
+/* Calendar */
+tooltip {
+	background-color: #282828;
+	color: #ebdbb2;
+}
