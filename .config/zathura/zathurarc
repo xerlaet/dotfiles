@@ -1,0 +1,31 @@
+
+# enable recoloring
+#set recolor "true"
+#set recolor-lightcolor "#282828"
+#set recolor-darkcolor "#ebdbb2"
+
+# change color scheme
+#set default-bg "#1d2021"
+#set statusbar-bg "#1d2021"
+#set inputbar-bg" #1d2021"
+set default-bg "#282828"
+set statusbar-bg "#282828"
+set inputbar-bg" #282828"
+
+set default-fg "#ebdbb2"
+set statusbar-fg "#ebdbb2"
+set inputbar-fg "#d79921"
+
+# disable green highlights
+set synctex "false"
+
+# reload keybind (doesn't work lol)
+# map <C-r> source ~/.config/zathura/zathurarc
+
+# set default background
+#set default-bg "#282828"
+#set completion-bg "#282828"
+
+#set highlight-transparency 0.0
+#set synctex-highlight-cursor "none"
+#set synctex-highlight-line "none"
